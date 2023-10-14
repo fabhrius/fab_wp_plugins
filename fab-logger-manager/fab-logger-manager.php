@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Fab Logger Manager
-Description: Provide Configurable Logs support for other plugins
+Description: Provide Configurable Logs support for other fab plugins
 Version: 0.1
 Author: Fab
 */
