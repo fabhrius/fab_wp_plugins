@@ -1,14 +1,14 @@
 <?php
 
-$properties = getProperties_example();
+$properties = getProperties_chap0();
 $shortCodeString = $properties['short_code_string'];
 
 
 // Add a shortcode to insert the flipbook in posts
-    function shortcode_example($atts) {
+    function shortcode_chap0($atts) {
 
-        $arrayImagePaths = getArrayImagePath_example();
-        $properties = getProperties_example();
+        $arrayImagePaths = getArrayImagePath_chap0();
+        $properties = getProperties_chap0();
 
 
         $bookTitle = $properties['book_title'];
@@ -20,11 +20,11 @@ $shortCodeString = $properties['short_code_string'];
 
         return $output;
     }
-    add_shortcode($shortCodeString, 'shortcode_example');
+    add_shortcode($shortCodeString, 'shortcode_chap0');
 
 
 
-    function getArrayImagePath_example(){
+    function getArrayImagePath_chap0(){
 
         $config_file_path = 'img_path.ini'; 
         $config = parse_ini_file($config_file_path);
@@ -39,7 +39,7 @@ $shortCodeString = $properties['short_code_string'];
         return $arrayImagePaths;
     }
 
-    function getProperties_example(){
+    function getProperties_chap0(){
         $config_file_path = 'config.ini'; 
         $config = parse_ini_file($config_file_path);
 
