@@ -2,13 +2,13 @@
 
 class FlipBookCreator {
 
-    function getBookString($arrayImagePaths, $bookTitle, $endString, $bookHtml_id){
+    function getBookString($arrayImagePaths, $bookTitle, $endString, $bookHtml_id){ // , $coverSupPath, $coverInfPath
 
       $bookString = '' .
-      $this->addNavigationButtonsPanel() . 
-      $this->addCoverSup($bookTitle, $bookHtml_id) . 
+      //$this->addNavigationButtonsPanel() . 
+      $this->addCoverSup($bookTitle, $bookHtml_id) .  // , $coverSupPath
       $this->addPages($arrayImagePaths) .
-      $this->addCoverInf($endString) .
+      $this->addCoverInf($endString) . // , $coverInfPath
       $this->addJavaScriptLibrary() .
       $this->addBookConfiguration($bookHtml_id) .
       $this->addJavaScriptFunctionality() .
@@ -26,18 +26,17 @@ class FlipBookCreator {
                 <button type="button" class="btn-prev btn btn-primary">Previous page</button>
                 <span class="page-current">1</span> of <span class="page-total">-</span>
                 <button type="button" class="btn-next btn btn-primary">Next page</button>
-            </div>    
+            </div>   
             <div class="alert alert-danger mt-3 mb-3">
                 State: <i class="page-state">read</i>, orientation: <i class="page-orientation">landscape</i>
-            </div>
+            </div> 
         </div>
       ';
 
       return $codeString;
     }
 
-    function addCoverSup($bookTitle, $bookHtml_id){
-
+    function addCoverSup($bookTitle, $bookHtml_id){ // , $coverSupPath
       $codeString = '
       <div class="container">
           <div class="flip-book" id="' . $bookHtml_id . '">
@@ -54,7 +53,7 @@ class FlipBookCreator {
       return $codeString;
     }
 
-    function addCoverInf($endString){
+    function addCoverInf($endString){ // , $coverInfPath
       $codeString = '
             <div class="page page-cover page-cover-bottom" data-density="hard">
                 <div class="page-content">
@@ -85,8 +84,8 @@ class FlipBookCreator {
             const pageFlip = new St.PageFlip(
                 document.getElementById("' . $bookHtml_id . '"),
                 {
-                    width: 550, // base page width
-                    height: 733, // base page height
+                    width: 817, //550, // base page width
+                    height: 1057, //733, // base page height
 
                     size: "stretch",
                     // set threshold values:
@@ -158,9 +157,9 @@ class FlipBookCreator {
       $codeString = '
       <div class="page">
           <div class="page-content">
-              <h2 class="page-header">Page header 1</h2>
+              <!-- <h2 class="page-header">Page header 1</h2> -->
               <div class="page-image" style="background-image: url(' . $imagePath . ')"></div>
-              <div class="page-footer">2</div>
+              <!--  <div class="page-footer">2</div> -->
           </div>
       </div>
       ';

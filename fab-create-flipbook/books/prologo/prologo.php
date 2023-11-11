@@ -1,30 +1,32 @@
 <?php
 
-$properties = getProperties_chap0();
+$properties = getProperties_prologo();
 $shortCodeString = $properties['short_code_string'];
 
 
 // Add a shortcode to insert the flipbook in posts
-    function shortcode_chap0($atts) {
+    function shortcode_prologo($atts) {
 
-        $arrayImagePaths = getArrayImagePath_chap0();
-        $properties = getProperties_chap0();
+        $arrayImagePaths = getArrayImagePath_prologo();
+        $properties = getProperties_prologo();
 
 
         $bookTitle = $properties['book_title'];
         $endString = $properties['end_string'];
         $bookHtml_id = $properties['book_html_id'];
+        //$coverSupPath = $properties['cover_sup_path'];
+       // $coverInfPath = $properties['cover_inf_path'];
 
         $flipBookCreator = new FlipBookCreator();
-        $output = $flipBookCreator->getBookString($arrayImagePaths, $bookTitle, $endString, $bookHtml_id);
+        $output = $flipBookCreator->getBookString($arrayImagePaths, $bookTitle, $endString, $bookHtml_id); // , $coverSupPath, $coverInfPath
 
         return $output;
     }
-    add_shortcode($shortCodeString, 'shortcode_chap0');
+    add_shortcode($shortCodeString, 'shortcode_prologo');
 
 
 
-    function getArrayImagePath_chap0(){
+    function getArrayImagePath_prologo(){
 
         $config_file_path = 'img_path.ini'; 
         $config = parse_ini_file($config_file_path);
@@ -39,7 +41,7 @@ $shortCodeString = $properties['short_code_string'];
         return $arrayImagePaths;
     }
 
-    function getProperties_chap0(){
+    function getProperties_prologo(){
         $config_file_path = 'config.ini'; 
         $config = parse_ini_file($config_file_path);
 

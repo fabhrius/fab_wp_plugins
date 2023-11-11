@@ -16,8 +16,7 @@ require_once(plugin_dir_path(__FILE__) . 'php/add_css_files_to_post_by_category.
 
 
 require_once(plugin_dir_path(__FILE__) . 'util/FlipBookCreator.php');
-require_once(plugin_dir_path(__FILE__) . 'books/example/example.php');
-require_once(plugin_dir_path(__FILE__) . 'books/chap0/chap0.php');
+require_once(plugin_dir_path(__FILE__) . 'books/prologo/prologo.php');
 
 
 
