@@ -12,7 +12,7 @@ include_once(plugin_dir_path(__FILE__) . 'db/create_msgtable.php');
 include_once(plugin_dir_path(__FILE__) . 'class/mobile_message_manager.php');
 
 // Instantiate the main class
-$my_plugin = new Json_Hello_World();
+$my_plugin = new Mobile_Message_Manager();
 
 // Register activation and deactivation hooks
 register_activation_hook(__FILE__, array($my_plugin, 'activate'));
